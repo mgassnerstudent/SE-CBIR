@@ -6,11 +6,6 @@ To reproduce the results, please follow the preparation steps below:
 
 1. Create folders: 
      * models
-     * data
-     * data/HAM
-     * data/saliency_maps
-     * data/4ch_input
-     * data/embeddings
       
 2. Extract data from polybox
     * 3ch.h5 and 4ch.h5 into models/
