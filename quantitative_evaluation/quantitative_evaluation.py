@@ -132,7 +132,7 @@ def precision_at_k(retrieved_name: str, k : int, traindf):
     macro_avg = sum(p_at_k_rel)/7
 
     if k==7:
-        with open('../clinical_evaluation/majority_vote.json', 'w') as fp:
+        with open('../qualitative_evaluation/majority_vote.json', 'w') as fp:
             json.dump(dict_maj_vote, fp)
     return macro_avg, p_at_k_rel
 
