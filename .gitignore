@@ -2,7 +2,8 @@ data/HAM/
 data/saliency_maps/
 data/4ch_input/
 models/
-
+data/embeddings/4ch_emb_test_all.json
+data/embeddings/3ch_emb_test_all.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
