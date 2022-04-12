@@ -4,17 +4,16 @@ This repository aims for a quick check of the results of my Master thesis: "Sali
 
 To reproduce the results, please follow the preparation steps below: 
 
-1. Create folders: 
-     * models
       
-2. Extract data from polybox
+1. Extract data from [polybox](https://polybox.ethz.ch/index.php/s/013sG9EuMJXhUwr "Polybox link")
     * 3ch.h5 and 4ch.h5 into models/
     * HAM/*, saliency_maps/*, and 4ch_input/* into data/
 
-3. install dependencies
+2. install dependencies
 
-4. Check SE-CBIR results
-
+3. Check SE-CBIR results as described in two chapters
+    * Quantitative Evaluation
+    * Qualitative Evaluation
 
 ## Quantiative Evaluation
 
