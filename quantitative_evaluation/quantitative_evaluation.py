@@ -212,9 +212,8 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
     # General parameters
-    clf3_name = '3ch' # name of 3-channel classifier
-    clf4_name = '4ch' # name of 4-channel classifier
-    explainer = 'Vanilla' # name of the explainer
+    clf3_name = '/3ch' # name of 3-channel classifier
+    clf4_name = '/4ch' # name of 4-channel classifier
     feature_layer = 6
     
     # Data preparations
