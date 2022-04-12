@@ -212,8 +212,8 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
     # General parameters
-    clf3_name = '5e-5' # name of 3-channel classifier
-    clf4_name = '4ch_100_1e-5' # name of 4-channel classifier
+    clf3_name = '3ch' # name of 3-channel classifier
+    clf4_name = '4ch' # name of 4-channel classifier
     explainer = 'Vanilla' # name of the explainer
     feature_layer = 6
     
@@ -243,13 +243,10 @@ if __name__ == '__main__':
             random_state=seed)
     test_names4 = testdf4['ID'].values
     #  Preparations 3-channel classifier:
-    img_path3 = '../data/train/HAM/'     
-    catalog_map_path3 = '../data/' + clf3_name + '_' + explainer 
+    img_path3 = '../data/HAM/'     
 
     # Extract features of 3-channel CNN classifier
-    img_path4 = '../data/'+ clf3_name + '_' + explainer + '_4channel/' 
-    catalog_map_path4 = '../data/'+ clf3_name + '_' + explainer + '_4channel/' 
-
+    img_path4 = '../data/4ch_input/' 
     
     if args.image_retrieval or args.extract_features or args.model_report:
         lr = 0.000001 #dummy value
@@ -314,10 +311,10 @@ if __name__ == '__main__':
     p_at_k_3 = precision_at_k(retrieved_name=clf3_name+'_emb_test_ret', k=4,  traindf=traindf3)
     p_at_k_6 = precision_at_k(retrieved_name=clf3_name+'_emb_test_ret', k=7,  traindf=traindf3)
     p_at_k_9 = precision_at_k(retrieved_name=clf3_name+'_emb_test_ret', k=10,  traindf=traindf3)
-    quantitative_results['SE-CBIR']['k=1': p_at_k_1]
-    quantitative_results['SE-CBIR']['k=3': p_at_k_3]
-    quantitative_results['SE-CBIR']['k=6': p_at_k_6]
-    quantitative_results['SE-CBIR']['k=9': p_at_k_9]
+    quantitative_results['SE-CBIR']['k=1'] = p_at_k_1
+    quantitative_results['SE-CBIR']['k=3'] = p_at_k_3
+    quantitative_results['SE-CBIR']['k=6'] = p_at_k_6
+    quantitative_results['SE-CBIR']['k=9'] = p_at_k_9
     print('Order of P@k values: akiec, bcc, bkl, df, mel, nv, vasc')
     print('k=1: AP@k = ', f"{p_at_k_1[0]:.3f}", '   P@k: ', [f"{x:.3f}" for x in p_at_k_1[1]])
     print('k=3: AP@k = ', f"{p_at_k_3[0]:.3f}", '   P@k: ', [f"{x:.3f}" for x in p_at_k_3[1]])
@@ -329,10 +326,10 @@ if __name__ == '__main__':
     p_at_k_3 = precision_at_k(retrieved_name=clf4_name+'_emb_test_ret', k=4,  traindf=traindf4)
     p_at_k_6 = precision_at_k(retrieved_name=clf4_name+'_emb_test_ret', k=7,  traindf=traindf4)
     p_at_k_9 = precision_at_k(retrieved_name=clf4_name+'_emb_test_ret', k=10,  traindf=traindf4)
-    quantitative_results['3-channel']['k=1': p_at_k_1]
-    quantitative_results['3-channel']['k=3': p_at_k_3]
-    quantitative_results['3-channel']['k=6': p_at_k_6]
-    quantitative_results['3-channel']['k=9': p_at_k_9]
+    quantitative_results['3-channel']['k=1'] = p_at_k_1
+    quantitative_results['3-channel']['k=3'] = p_at_k_3
+    quantitative_results['3-channel']['k=6'] = p_at_k_6
+    quantitative_results['3-channel']['k=9'] = p_at_k_9
     print('Order of P@k values: akiec, bcc, bkl, df, mel, nv, vasc')
     print('k=1: AP@k = ', f"{p_at_k_1[0]:.3f}", '   P@k: ', [f"{x:.3f}" for x in p_at_k_1[1]])
     print('k=3: AP@k = ', f"{p_at_k_3[0]:.3f}", '   P@k: ', [f"{x:.3f}" for x in p_at_k_3[1]])
