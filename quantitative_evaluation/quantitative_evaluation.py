@@ -289,14 +289,17 @@ if __name__ == '__main__':
             model_performances['4-channel'] = acc_and_sens(model = clf4.model, img_path = img_path4[:-1], testdf = testdf4)
             with open('../results/model_performances.json', 'w') as fp:
                 json.dump(model_performances, fp, indent=2)
-        if args.extract_features:
-            print('Extracting the deep features of the 3-channel CNN classifier')
-            extract_features(model=clf3.model, test_names=test_names3, catalog_path=img_path3[:-1], save_name=clf3_name+'_emb_test', feature_layer=feature_layer)
-            print('Extracting the deep features of the 4-channel CNN classifier')
-            extract_features(model=clf4.model, test_names=test_names4, catalog_path=img_path4[:-1], save_name=clf4_name+'_emb_test', feature_layer=feature_layer)
+        
+        if args.image_retrieval or args.extract_features:
+            
+            if args.extract_features:
+                print('Extracting the deep features of the 3-channel CNN classifier')
+                extract_features(model=clf3.model, test_names=test_names3, catalog_path=img_path3[:-1], save_name=clf3_name+'_emb_test', feature_layer=feature_layer)
+                print('Extracting the deep features of the 4-channel CNN classifier')
+                extract_features(model=clf4.model, test_names=test_names4, catalog_path=img_path4[:-1], save_name=clf4_name+'_emb_test', feature_layer=feature_layer)
 
-        img_retrieval(load_name=clf4_name+'_emb_test', num_retrieved=10)
-        img_retrieval(load_name=clf3_name+'_emb_test', num_retrieved=10)
+            img_retrieval(load_name=clf4_name+'_emb_test', num_retrieved=10)
+            img_retrieval(load_name=clf3_name+'_emb_test', num_retrieved=10)
 
     # Printing results of quantitative evaluation
     traindf3['dx'] = traindf3['dx'].apply(change_label)
