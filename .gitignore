@@ -1,3 +1,8 @@
+data/HAM/
+data/saliency_maps/
+data/4ch_input/
+models/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
