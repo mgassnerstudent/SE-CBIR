@@ -2,8 +2,6 @@ import pandas as pd
 import albumentations as A
 from typing import Dict, Union
 from sklearn.model_selection import train_test_split
-from utils.hair_augmentation import AdvancedHairAugmentation
-#from utils.color_constancy_augmentation import ColorConstancyAugmentation
 
 def get_augmentations(sz: int, cfg: Dict[str, Union[bool, float]], explainer=None):
     '''
