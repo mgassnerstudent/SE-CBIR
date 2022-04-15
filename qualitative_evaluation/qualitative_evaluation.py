@@ -106,7 +106,7 @@ for (j, data) in enumerate(datas):
     qualitative_results['Task 2']['confidence']['PCP'+str(j+1)]['wrong'] = sum(confidence_task2['wrong'])/len(confidence_task2['wrong'])
 
     # Print resutls of Participant j
-    print('-------------------- Participant ', j, ' -------------------')       
+    print('-------------------- Participant ', j+1, ' -------------------')       
     print('Accuracies:   Majority vote = ', majority_vote['overall'], '%  Task 1 = ', accuracy_task1['overall'], '%  Task 2 = ', accuracy_task2['overall'], '%' )
     print('Confidence Task 1 (overall (correct/wrong)): ',  f"{sum(confidence_task1['overall'])/len(confidence_task1['overall']) :.2f}", ' ( ', 
                                                             f"{sum(confidence_task1['correct'])/len(confidence_task1['correct']) :.2f}",' / ', 
