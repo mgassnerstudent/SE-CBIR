@@ -15,11 +15,6 @@ def get_augmentations(sz: int, cfg: Dict[str, Union[bool, float]], explainer=Non
     '''
 
     additional_augments = []
-    
-    #if cfg['cc']:
-    #    additional_augments.append(ColorConstancyAugmentation())
-    #if cfg['add_hair']:
-    #    additional_augments.append(AdvancedHairAugmentation())
 
     augmentation_arguments = [
         A.RandomBrightnessContrast(brightness_limit=0.2*cfg['blur_noise'], contrast_limit=0.2*cfg['blur_noise'], p=0.75),
