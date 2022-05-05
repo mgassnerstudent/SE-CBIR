@@ -1,6 +1,6 @@
 # SE-CBIR
 
-This repository aims for a quick check of the results of my Master thesis: "Saliency-Enhanced Content-Based Image Retrieval in Dermatology Imaging. 
+This repository aims for a quick check of the results of my Master thesis: "Saliency-Enhanced Content-Based Image Retrieval in Dermatology Imaging". Interested visitors can go through my [thesis](Master_Thesis_SE_CBIR.pdf)) 
 
 To reproduce the results, please follow the preparation steps below: 
 
