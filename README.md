@@ -10,7 +10,7 @@ To reproduce the results, please follow the preparation steps below:
 
 2. install dependencies using the requirements.txt file:
     <code><pre>pip install virtualenv <br/>
-    python3.6 venv -m se-cbir <br/>
+    python3.6 -m venv se-cbir <br/>
     source se-cbir/bin/activate <br/>
     pip install -r requirements.txt </code></pre><br/>
 
